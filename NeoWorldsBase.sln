@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryExecutionEnvironmen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityServer", "EntityServer\EntityServer.csproj", "{99397398-0F29-4C64-9D2A-25AEA2C93DFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanonicalGrpcProtos", "CanonicalGrpcProtos\CanonicalGrpcProtos.csproj", "{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudoServer", "KudoServer\KudoServer.csproj", "{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{99397398-0F29-4C64-9D2A-25AEA2C93DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99397398-0F29-4C64-9D2A-25AEA2C93DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99397398-0F29-4C64-9D2A-25AEA2C93DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
