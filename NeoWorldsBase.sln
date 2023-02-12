@@ -5,23 +5,35 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldServer", "WorldServer\WorldServer.csproj", "{E6D5F9E1-0163-4D55-92D0-A5A71EB7A5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryContainerLib", "EmissaryContainerLib\EmissaryContainerLib.csproj", "{FC323E68-9CFA-4527-B6C4-6DFF3B602656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissaryContainerLib", "EmissaryContainerLib\EmissaryContainerLib.csproj", "{FC323E68-9CFA-4527-B6C4-6DFF3B602656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryExecutionEnvironment", "EmissaryExecutionEnvironment\EmissaryExecutionEnvironment.csproj", "{3FDCFE30-7190-4CC4-A71A-3FC29653E634}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissaryExecutionEnvironment", "EmissaryExecutionEnvironment\EmissaryExecutionEnvironment.csproj", "{3FDCFE30-7190-4CC4-A71A-3FC29653E634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityServer", "EntityServer\EntityServer.csproj", "{99397398-0F29-4C64-9D2A-25AEA2C93DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityServer", "EntityServer\EntityServer.csproj", "{99397398-0F29-4C64-9D2A-25AEA2C93DFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanonicalGrpcProtos", "CanonicalGrpcProtos\CanonicalGrpcProtos.csproj", "{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CanonicalGrpcProtos", "CanonicalGrpcProtos\CanonicalGrpcProtos.csproj", "{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudoServer", "KudoServer\KudoServer.csproj", "{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KudoServer", "KudoServer\KudoServer.csproj", "{2AAE05C7-33B3-4D13-87AF-CCBB87489A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvatarServer", "AvatarServer\AvatarServer.csproj", "{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvatarServer", "AvatarServer\AvatarServer.csproj", "{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{61D53D5D-10DC-4512-923D-5943860D3A0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmissarySupport", "EmissarySupport", "{D9F222DE-1019-4214-B22E-987D9C483A57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communications", "Communications", "{2506384A-FFF5-4958-884F-7234C2436E9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonInfrastructure", "CommonInfrastructure", "{4C7B9574-375E-4257-8D28-FDDB56A31BE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeDiscovery", "NodeDiscovery\NodeDiscovery.csproj", "{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmissaryAPIs", "EmissaryAPIs", "{C4EB5AE1-7414-4DCE-BF11-4B95B74D64BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissaryIO", "EmissaryIO\EmissaryIO.csproj", "{0D110737-0F5D-486F-AE37-8EF51E502801}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeshHandling", "MeshHandling\MeshHandling.csproj", "{14A8329C-4912-4C30-98C3-0185F135A856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryTest", "EmissaryTest\EmissaryTest.csproj", "{CF299FB3-F906-49B7-BB94-CEF4CE36054B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +69,22 @@ Global
 		{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D110737-0F5D-486F-AE37-8EF51E502801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D110737-0F5D-486F-AE37-8EF51E502801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D110737-0F5D-486F-AE37-8EF51E502801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D110737-0F5D-486F-AE37-8EF51E502801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A8329C-4912-4C30-98C3-0185F135A856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A8329C-4912-4C30-98C3-0185F135A856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A8329C-4912-4C30-98C3-0185F135A856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A8329C-4912-4C30-98C3-0185F135A856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +97,10 @@ Global
 		{590CA2FE-7A4D-4ADE-9E65-DA94F4E8B18B} = {2506384A-FFF5-4958-884F-7234C2436E9F}
 		{2AAE05C7-33B3-4D13-87AF-CCBB87489A20} = {61D53D5D-10DC-4512-923D-5943860D3A0D}
 		{58E768B4-4A56-41B4-93D3-D1E1D55E8BA6} = {61D53D5D-10DC-4512-923D-5943860D3A0D}
+		{B613EFC5-C8C3-422D-A287-DC9FE21EC8EF} = {4C7B9574-375E-4257-8D28-FDDB56A31BE6}
+		{0D110737-0F5D-486F-AE37-8EF51E502801} = {C4EB5AE1-7414-4DCE-BF11-4B95B74D64BF}
+		{14A8329C-4912-4C30-98C3-0185F135A856} = {4C7B9574-375E-4257-8D28-FDDB56A31BE6}
+		{CF299FB3-F906-49B7-BB94-CEF4CE36054B} = {D9F222DE-1019-4214-B22E-987D9C483A57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A23CED-7F92-40FA-8B25-524AA483F1C1}

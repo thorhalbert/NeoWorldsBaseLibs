@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "CanonicalGrpcProtos";
+
+package entityserver;
+
+// Context switch of entity instance
+
+// Create new entity instance
+
+// Download emissary
+
+// Upload/Validate an emissary
+
+// Release management / deprecation
+
+// Manage CI from repos on github

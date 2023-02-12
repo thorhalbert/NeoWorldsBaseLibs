@@ -84,7 +84,7 @@ we'll just add our own file processing library in our code and link it into the 
 These are analagous to docker images.   But we don't need a real filesystem like the giant (aufs onion filesystems in docker, which are hard to implement in windows).
 Our virtual filesystem via the file database, is much quicker.   This should even be able to work inside limited android environment.
 
-Like a docker image, these likely get named with a sha256 checksum of the whole file (or the manifestt file), or a hash made by the builder (though maybe base64).   Lots of hashing going on there, need to
+Like a docker image, these likely get named with a sha256 checksum of the whole file (or the manifest file), or a hash made by the builder (though maybe base64).   Lots of hashing going on there, need to
 make this fast or it could take forever to load in a scene if the entities aren't already cached.  Another possible speedup is loading trusted manifests from the
 entity server while it's downloading the emissary itself.   This might make it so you just have to do file downloads, and quick database loads without needing to
 do validation beyond hashing as you download.

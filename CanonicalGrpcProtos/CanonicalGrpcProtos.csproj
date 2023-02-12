@@ -7,13 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Entity\EntityServer.proto" />
+    <None Remove="Kudo\KudoServer.proto" />
+    <None Remove="World\WorldServer.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.51.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\" />
-    <Folder Include="Kudo\" />
-    <Folder Include="World\" />
+    <Protobuf Include="Entity\EntityServer.proto" />
+    <Protobuf Include="Kudo\KudoServer.proto" />
+    <Protobuf Include="World\WorldServer.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

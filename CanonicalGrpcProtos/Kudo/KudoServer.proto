@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "CanonicalGrpcProtos";
+
+package kudoserver;
+
+// Find trust relationship to manufacturer - find world, entity
+
+// Authenticate avatar/aspect and return public information - get jwt
+// this may have to happen against a foreign federated kudo server
+
