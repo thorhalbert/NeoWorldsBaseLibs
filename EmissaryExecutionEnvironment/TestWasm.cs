@@ -18,7 +18,7 @@ namespace EmissaryExecutionEnvironment
 
             linker.DefineWasi();
 
-            store.SetWasiConfiguration(new WasiConfiguration());
+            store.SetWasiConfiguration(new WasiConfiguration().WithInheritedStandardOutput());
 
             //emissaryStore.BindWasi(store, linker);
 

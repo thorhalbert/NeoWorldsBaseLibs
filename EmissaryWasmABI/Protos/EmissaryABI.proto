@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "EmissaryABIProtos";
+
+package EmissaryABI;
+
+message Startup {
+  string name = 1;
+}

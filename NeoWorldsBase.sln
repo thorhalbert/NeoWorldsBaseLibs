@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissaryIO", "EmissaryIO\Em
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeshHandling", "MeshHandling\MeshHandling.csproj", "{14A8329C-4912-4C30-98C3-0185F135A856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryTest", "EmissaryTest\EmissaryTest.csproj", "{CF299FB3-F906-49B7-BB94-CEF4CE36054B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissaryTest", "EmissaryTest\EmissaryTest.csproj", "{CF299FB3-F906-49B7-BB94-CEF4CE36054B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissaryWasmABI", "EmissaryWasmABI\EmissaryWasmABI.csproj", "{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF299FB3-F906-49B7-BB94-CEF4CE36054B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{0D110737-0F5D-486F-AE37-8EF51E502801} = {C4EB5AE1-7414-4DCE-BF11-4B95B74D64BF}
 		{14A8329C-4912-4C30-98C3-0185F135A856} = {4C7B9574-375E-4257-8D28-FDDB56A31BE6}
 		{CF299FB3-F906-49B7-BB94-CEF4CE36054B} = {D9F222DE-1019-4214-B22E-987D9C483A57}
+		{0CA323AC-3D25-41D0-8DAE-2D563F0D2D3B} = {C4EB5AE1-7414-4DCE-BF11-4B95B74D64BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A23CED-7F92-40FA-8B25-524AA483F1C1}
