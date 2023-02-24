@@ -1,4 +1,5 @@
 ﻿using EmissaryABIProtos;
+using EntityInterop;
 using Google.Protobuf;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,16 @@ namespace NeoWorlds.EmissaryWasmABI
 {
     public class Entity
     {
+        public delegate byte[] EntityFunc(int abi, int abitask, byte[] payload);
+
+        public Entity()
+        {
+            interop = new Interop();
+            //Interop.SetInterop(interop);
+        }
+
+        private Interop interop;
+
         public Startup EnterStartup()
         {
       
@@ -22,15 +33,27 @@ namespace NeoWorlds.EmissaryWasmABI
             //var ret = new Startup();
             //ret.MergeFrom(ba);
 
-            var wormhole = _get_entity_test(1);
+            //var wormhole = _get_entity_test(1);
 
-            var start = new Startup { Name = $"Hello From Arena Side- {RuntimeInformation.OSArchitecture} wormhole={wormhole}" };
+            var start = new Startup { Name = $"Hello From Arena Side- {RuntimeInformation.OSArchitecture}" };
+            var ret = new RetMsg();
+
+            var rv = CallEntityRPC(0, 0, start, ret);
 
             return start;
         }
 
-        [DllImport("EntityInterop")]
+        private int CallEntityRPC(int v1, int v2, Startup start, RetMsg ret)
+        {
+            var ba = new byte[8192];
+
+            int error = interop.CallEntityRPC(v1, v2, start, ref ba);
+
+            return error;
+        }
+
+        //[DllImport("EntityInterop")]
         //public static extern byte[]? _entity_get_startup();
-        public static extern Int32 _get_entity_test(Int32 input);
+        //public static extern Int32 _get_entity_test(Int32 input);
     }
 }

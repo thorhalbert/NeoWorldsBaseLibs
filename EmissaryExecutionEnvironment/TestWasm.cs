@@ -20,6 +20,7 @@ namespace EmissaryExecutionEnvironment
 
             store.SetWasiConfiguration(new WasiConfiguration().WithInheritedStandardOutput());
 
+            emissaryStore.BindABI(store, linker);
             //emissaryStore.BindWasi(store, linker);
 
             var instance = linker.Instantiate(store, module);

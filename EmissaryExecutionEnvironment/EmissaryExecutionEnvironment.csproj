@@ -4,11 +4,18 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GodotSharp" Version="4.0.0-beta2" />
+    <PackageReference Include="Google.Protobuf" Version="3.22.0" />
     <PackageReference Include="Wasmtime" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmissaryABI\EntityABI.csproj" />
+    <ProjectReference Include="..\EmissaryWasmABI\EmissaryWasmABI.csproj" />
   </ItemGroup>
 
 </Project>

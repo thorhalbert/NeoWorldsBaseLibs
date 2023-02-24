@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EmissaryTest": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "WASMTIME_BACKTRACE_DETAILS": "1"
+      }
+    }
+  }
+}

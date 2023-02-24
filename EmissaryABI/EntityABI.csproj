@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <PackageId>WapcGuest</PackageId>
+    <Version>0.1.1</Version>
+    <Authors>Flavio Castelli</Authors>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.52.0-pre1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Wasi.Sdk" Version="0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Include="native\*.c" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\EntityABI.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Add README.md to nuget gallery -->
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\EntityABI.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+  <Import Project="build\WapcGuest.targets" />
+
+  <Target Name="PackTaskDependencies" BeforeTargets="GenerateNuspec">
+    <ItemGroup>
+      <_PackageFiles Include="build\**" BuildAction="Content" PackagePath="build" />
+      <_PackageFiles Include="native\**" BuildAction="Content" PackagePath="native" />
+    </ItemGroup>
+  </Target>
+
+</Project>
