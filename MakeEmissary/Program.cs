@@ -1,10 +1,12 @@
-﻿namespace MakeEmissary
+﻿using NeoWorlds.EmissaryContainerLib.Builder;
+
+namespace MakeEmissary
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var emissaryTar = new GenerateTar();
         }
     }
 }

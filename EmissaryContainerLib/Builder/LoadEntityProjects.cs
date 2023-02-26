@@ -7,14 +7,35 @@ using YamlDotNet.Serialization;
 
 namespace NeoWorlds.EmissaryContainerLib.Builder
 {
-    internal class LoadEntityProjects
+    public partial class LoadEntityProjects
     {
+        public ProjectDefaults EntityDefaults { get; private set; }
+        public EntityProjectListing[] EntityProjects { get; private set; }
+
         public LoadEntityProjects(string projYaml)
         {
             var deserializer = new DeserializerBuilder()
                 .Build();
 
-            var entityProjects = deserializer.Deserialize<object>(projYaml);
+            var EntityDefaults = deserializer.Deserialize<ProjectDefaults>(File.OpenText(projYaml));
+            EntityProjects = EntityDefaults.EntityProjects.ToArray();
+
+            //foreach (var v in EntityProjects)
+            //{
+            //    var g = v.ProjectId;
+            //    v.ProjectId = Guid.Parse(g).ToString();
+            //}
+        }
+
+        public class ProjectDefaults
+        {
+            public string DefaultPlatform { get; set; }
+            public List<EntityProjectListing> EntityProjects { get; set; }
+        }
+        public class EntityProjectListing
+          {
+            public string Name { get; set; }
+            public string Directory { get; set; }
         }
     }
 }
