@@ -124,6 +124,8 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
                 dumpStream.CopyTo(manStream);
             }
 
+            var checker = new CheckEmissary(extendedManifest, finalTarPathBase + ".emissary");
+
             Console.WriteLine("Tar archive created successfully!");
         }
 
