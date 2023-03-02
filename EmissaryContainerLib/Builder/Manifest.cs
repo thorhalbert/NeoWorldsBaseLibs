@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Serialization;
+using CanonicalGrpcProtos;
 using static NeoWorlds.EmissaryContainerLib.Builder.LoadEntityProjects;
 
 namespace EmissaryContainerLib.Builder
@@ -13,12 +14,29 @@ namespace EmissaryContainerLib.Builder
     { 
         public ManifestEntry Manifest { get; set; }
         public string EmissarySHA256 { get;set; }
+        public Int64 EmissarySize { get; set; }
         public string BuildName { get; internal set; }
 
         public ManifestExtendedHeader(ManifestHeader m)
         {
             Project = m.Project;
             FileSystem = m.FileSystem;
+        }
+
+        public EntityManifestHeader GetProto()
+        {
+            var ret = new EntityManifestHeader {
+                BuildName = BuildName,
+                Manifest = Manifest.GetProto(),
+                EmissarySHA256 = EmissarySHA256,
+                EntityProject = Project.GetProto(),
+                EmissarySize = EmissarySize
+            };
+
+            foreach (var f in FileSystem)
+                ret.ManifestEntries.Add(f.GetProto());
+
+            return ret;
         }
     }
     /// <summary>
@@ -76,5 +94,18 @@ namespace EmissaryContainerLib.Builder
         // metadata and mimetype, etc -- most of the latter is up to 
         // the entity
 
+        public EmissaryManifestEntry GetProto()
+        {
+            var ret = new EmissaryManifestEntry
+            {
+                Path = Path,
+                Size = Size,
+                FileIdx = FileIdx,
+                Offset = Offset,
+                SHA256 = SHA256
+            };
+
+            return ret;
+        }
     }
 }

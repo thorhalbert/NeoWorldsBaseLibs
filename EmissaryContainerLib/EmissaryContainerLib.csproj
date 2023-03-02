@@ -16,4 +16,8 @@
     <Folder Include="EmissaryFilesystem\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CanonicalGrpcProtos\CanonicalGrpcProtos.csproj" />
+  </ItemGroup>
+
 </Project>

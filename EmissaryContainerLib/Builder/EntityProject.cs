@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using CanonicalGrpcProtos;
+using System.Text;
 using YamlDotNet.Serialization;
 
 namespace NeoWorlds.EmissaryContainerLib.Builder
@@ -24,13 +25,27 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
                 return project;
             }
 
-            public (Stream,int) DumpProject() {
+            public EmissaryEntityProjects GetProto()
+            {
+                var ret = new EmissaryEntityProjects
+                {
+                    Name = Name,
+                    Description = Description,
+                    ProjectId = ProjectId,
+                    Binary = Binary,
+                    BuildTime = BuildTime,
+                };
+
+                return ret;
+            }
+
+            public Stream DumpProject() {
                 BuildTime = DateTimeOffset.Now.ToString("R");
 
                 var serializer = new SerializerBuilder().Build();
 
                 var body = serializer.Serialize(this);
-                return (new MemoryStream(Encoding.UTF8.GetBytes(body)), body.Length);
+                return new MemoryStream(Encoding.UTF8.GetBytes(body));
             }
         }
     }

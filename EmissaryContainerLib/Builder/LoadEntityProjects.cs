@@ -10,6 +10,7 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
     public partial class LoadEntityProjects
     {
         public ProjectDefaults EntityDefaults { get; private set; }
+        public EntityServers EntityServer { get; set; }
         public EntityProjectListing[] EntityProjects { get; private set; }
 
         public LoadEntityProjects(string projYaml)
@@ -27,6 +28,10 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
             //}
         }
 
+        public class EntityServers
+        {
+            public string Host { get; set; }
+        }
         public class ProjectDefaults
         {
             public string DefaultPlatform { get; set; }

@@ -4,14 +4,68 @@ option csharp_namespace = "CanonicalGrpcProtos";
 
 package entityserver;
 
-// Context switch of entity instance
+// ------------Login/Authenticate, get JWT
 
-// Create new entity instance
+// ------------Context switch of entity instance
 
-// Download emissary
+// ------------Create new entity instance
 
-// Upload/Validate an emissary
+// ------------Download emissary
 
-// Release management / deprecation
+// ------------Upload/Validate an emissary - client streams
 
-// Manage CI from repos on github
+// Manifest of the Emissary
+message EmissaryEntityProjects
+{
+    string Name = 1;
+    string Description = 2;
+    string ProjectId = 3;
+    string Binary = 4;
+    string BuildTime = 5;
+}
+message EntityManifestHeader 
+{ 
+    EmissaryEntityProjects EntityProject = 1;
+      
+    EmissaryManifestEntry Manifest = 2;
+    string EmissarySHA256 = 3;
+    int64 EmissarySize = 4;
+    string BuildName = 5;
+    repeated EmissaryManifestEntry ManifestEntries = 6;
+}
+message EmissaryManifestEntry
+{
+    string Path = 1;    
+    int64 Size = 2;
+    int32 FileIdx = 3;
+    int64 Offset = 4;
+    string SHA256 = 5;
+}
+
+// UploadEmissaryPrepare 
+message UploadEmissaryPrepareRequest {
+    EntityManifestHeader EmissaryManifest = 1;
+}
+message UploadEmissaryPrepareResult {
+    string UploadGuid = 1;
+    int32 MaxUploadPacket = 2;
+}
+
+// UploadEmissaryBody
+message UploadEmissaryBodyStream {
+    string UploadGuid = 1;
+    int32 Part = 2;  // Start at zero
+    bytes UploadPacket = 3;    
+}
+message UploadEmissaryBodyResult {
+    bool UploadSuccess = 1;
+}
+
+service EntityEmissaryManagment {
+    rpc UploadEmissaryPrepare (UploadEmissaryPrepareRequest) returns (UploadEmissaryPrepareResult);
+	rpc UploadEmissaryBody (stream UploadEmissaryBodyStream) returns (UploadEmissaryBodyResult);
+}
+
+// ------------Release management / deprecation
+
+// ------------Manage CI from repos on github

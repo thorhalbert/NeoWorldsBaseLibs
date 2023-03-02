@@ -33,11 +33,11 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
             {
                 var dir = Path.Combine(SolutionPath, project.Directory);
                 Console.WriteLine($"Project: {project.Name} - {dir}");
-                ProcessProject(project, dir);
+                ProcessProject(project, dir, projects);
             }
         }
 
-        internal void ProcessProject(EntityProjectListing projectListing, string projectDir)
+        internal void ProcessProject(EntityProjectListing projectListing, string projectDir, LoadEntityProjects projects)
         {
             var di = new FileInfo(projectDir);
             projectDir = di.FullName;
@@ -116,17 +116,28 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
             extendedManifest.BuildName = buildName;
             var finalTarPathBase = Path.Combine(emissaryBuildPath, $"{buildName}");
             var buildFile = new FileInfo(tarFilePath);
-            buildFile.MoveTo(finalTarPathBase + ".emissary");
 
-            using (var manStream = new FileStream(finalTarPathBase + ".manifest.yaml", FileMode.Create, FileAccess.Write))
+            var emissaryFile = finalTarPathBase + ".emissary";
+            var emissaryYaml = finalTarPathBase + ".manifest.yaml";
+
+            buildFile.MoveTo(emissaryFile);
+
+            using (var manStream = new FileStream(emissaryYaml, FileMode.Create, FileAccess.Write))
             {
                 var (dumpStream, dumpLength) = extendedManifest.DumpManifest();
                 dumpStream.CopyTo(manStream);
             }
 
-            var checker = new CheckEmissary(extendedManifest, finalTarPathBase + ".emissary");
+            var checker = new CheckEmissary(extendedManifest, emissaryFile);
+
+            UploadEmissary(projects, extendedManifest, emissaryFile);
 
             Console.WriteLine("Tar archive created successfully!");
+        }
+
+        private void UploadEmissary(LoadEntityProjects projects, ManifestExtendedHeader extendedManifest, string emissaryFile)
+        {
+            
         }
 
         private static void WriteTarStreamEntry(TarOutputStream tarOutputStream, TarEntry? tarEntry, Stream fileStream,
@@ -208,6 +219,8 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
 
         private TarEntry CreateEntry(TarEntry? tarEntry, string dir, string file, string? rawFile=null, int length=0)
         {
+            dir = dir.Replace('\\', '/');  // Our tar paths are unixy -- don't allow backslashes
+
             var name = $"{dir}/{file}";
             if (tarEntry == null)
                 if (!string.IsNullOrWhiteSpace(rawFile))
