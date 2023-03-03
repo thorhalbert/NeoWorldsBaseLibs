@@ -31,7 +31,7 @@ namespace EntityServer.Services
             // We do now have to figure out where the file goes that user is uploading
             // and needs to be stored somewhere we can deal with it if the upload times out
             // or the hash fails.   We probably need some mongo tables here.  We will want to 
-            // Store the manifest
+            // store the manifest.
 
             using var hasher = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
             
@@ -43,6 +43,8 @@ namespace EntityServer.Services
             }
 
             var hash = Convert.ToHexString(hasher.GetCurrentHash());
+
+            // We may also need to validate the manifest
 
             return new UploadEmissaryBodyResult
             {

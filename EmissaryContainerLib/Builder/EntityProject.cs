@@ -39,13 +39,14 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
                 return ret;
             }
 
-            public Stream DumpProject() {
+            public (Stream,int) DumpProject() {
                 BuildTime = DateTimeOffset.Now.ToString("R");
 
                 var serializer = new SerializerBuilder().Build();
 
                 var body = serializer.Serialize(this);
-                return new MemoryStream(Encoding.UTF8.GetBytes(body));
+                var payload = Encoding.UTF8.GetBytes(body);
+                return (new MemoryStream(payload), payload.Length);
             }
         }
     }
