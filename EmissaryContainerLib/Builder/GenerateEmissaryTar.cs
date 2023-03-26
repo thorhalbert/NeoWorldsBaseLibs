@@ -2,6 +2,7 @@
 using System.IO;
 using System.IO.Pipes;
 using System.Xml.Linq;
+using System.CommandLine;
 using EmissaryContainerLib.Builder;
 using ICSharpCode.SharpZipLib.Tar;
 using SharpCompress.Compressors.Xz;
@@ -9,10 +10,17 @@ using static NeoWorlds.EmissaryContainerLib.Builder.LoadEntityProjects;
 
 namespace NeoWorlds.EmissaryContainerLib.Builder
 {
-    public class GenerateTar
+    public class GenerateTar : Command
     {
-        public GenerateTar()
+        public GenerateTar(string verb, string? description) : base(verb, description)
         {
+           
+
+        }
+
+        public void Process()
+        {
+
             // The directory to be archived
             string SolutionPath = @"C:\Projects\HelloWorldEmissary\BouncySphere\";
 
@@ -261,5 +269,7 @@ namespace NeoWorlds.EmissaryContainerLib.Builder
                 foreach (var (c1, c2) in PursueDirTree(topDir, d))
                     yield return (c1, c2);
         }
+
+       
     }
 }

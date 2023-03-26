@@ -33,6 +33,8 @@ namespace EntityServer.Services
             // or the hash fails.   We probably need some mongo tables here.  We will want to 
             // store the manifest.
 
+            Console.WriteLine($"Current Dir: {Environment.CurrentDirectory}");
+
             using var hasher = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
             
             // Stream the uploading of the emissary
