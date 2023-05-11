@@ -7,6 +7,7 @@
     <UserSecretsId>d77f30a2-7ee1-43dd-ae6b-9cb04d9c793c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
+    <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
   </PropertyGroup>
 
   <ItemGroup>
