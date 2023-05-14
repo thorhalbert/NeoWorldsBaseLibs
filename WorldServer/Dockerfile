@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["NewRepo/WorldServer/WorldServer.csproj", "NewRepo/WorldServer/"]
-RUN dotnet restore "NewRepo/WorldServer/WorldServer.csproj"
+COPY ["WorldServer/WorldServer.csproj", "WorldServer/"]
+RUN dotnet restore "WorldServer/WorldServer.csproj"
 COPY . .
-WORKDIR "/src/NewRepo/WorldServer"
+WORKDIR "/src/WorldServer"
 RUN dotnet build "WorldServer.csproj" -c Release -o /app/build
 
 FROM build AS publish
