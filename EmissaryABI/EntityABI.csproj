@@ -40,6 +40,12 @@
     <Protobuf Include="Protos\EntityABI.proto" GrpcServices="Client" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Protos\Calls\" />
+    <Folder Include="Protos\Callbacks\" />
+    <Folder Include="Protos\Messages\" />
+  </ItemGroup>
+
   <Import Project="build\WapcGuest.targets" />
 
   <Target Name="PackTaskDependencies" BeforeTargets="GenerateNuspec">
