@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GodotSharp" Version="4.1.0-dev.2" />
+    <PackageReference Include="GodotSharp" Version="4.1.0-dev.4" />
     <PackageReference Include="MeshIO.STL" Version="2.0.0-alpha" />
     <PackageReference Include="QuantumConcepts.Formats.STL" Version="2.0.1" />
   </ItemGroup>

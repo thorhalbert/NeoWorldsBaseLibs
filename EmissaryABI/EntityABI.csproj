@@ -15,7 +15,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.2" />
     <PackageReference Include="Grpc.Tools" Version="2.54.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -28,7 +28,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Protos\Callbacks.proto" />
+    <None Remove="Protos\Callbacks\DestroyEmissary.proto" />
+    <None Remove="Protos\Callbacks\DestroyEntityHandler.proto" />
+    <None Remove="Protos\Callbacks\DestroyEntityInstance.proto" />
+    <None Remove="Protos\Callbacks\EntityInstanceUpdate.proto" />
+    <None Remove="Protos\Callbacks\EntityInstanceVersionUpdate.proto" />
+    <None Remove="Protos\Callbacks\InstantiateEntityInstance.proto" />
+    <None Remove="Protos\Callbacks\ReceiveInstanceStateChange.proto" />
+    <None Remove="Protos\Callbacks\ReceiveMessageFromChannel.proto" />
+    <None Remove="Protos\Calls.proto" />
+    <None Remove="Protos\Calls\AlterEntityInstance.proto" />
+    <None Remove="Protos\Calls\ApplyPhysicsToEntityInstance.proto" />
+    <None Remove="Protos\Calls\DestroyEntityInstance.proto" />
+    <None Remove="Protos\Calls\GenerateStateChange.proto" />
+    <None Remove="Protos\Calls\RegistryEntityHandlers.proto" />
+    <None Remove="Protos\Calls\SpawnNewEntityInstance.proto" />
+    <None Remove="Protos\Calls\SubscribeToChannel.proto" />
     <None Remove="Protos\EntityABI.proto" />
+    <None Remove="Protos\Messages\ChainIdentity.proto" />
+    <None Remove="Protos\Messages\ChannelDesignation.proto" />
+    <None Remove="Protos\Messages\Common.proto" />
+    <None Remove="Protos\Messages\EntityIdentity.proto" />
+    <None Remove="Protos\Messages\EntityInstanceTag.proto" />
+    <None Remove="Protos\Messages\MessageId.proto" />
+    <None Remove="Protos\Messages\MomentumUpdate.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,13 +61,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\Callbacks.proto" />
+    <Protobuf Include="Protos\Callbacks\DestroyEmissary.proto" />
+    <Protobuf Include="Protos\Callbacks\DestroyEntityHandler.proto" />
+    <Protobuf Include="Protos\Callbacks\DestroyEntityInstance.proto" />
+    <Protobuf Include="Protos\Callbacks\EntityInstanceUpdate.proto" />
+    <Protobuf Include="Protos\Callbacks\EntityInstanceVersionUpdate.proto" />
+    <Protobuf Include="Protos\Callbacks\InstantiateEntityInstance.proto" />
+    <Protobuf Include="Protos\Callbacks\ReceiveInstanceStateChange.proto" />
+    <Protobuf Include="Protos\Callbacks\ReceiveMessageFromChannel.proto" />
+    <Protobuf Include="Protos\Calls.proto" />
+    <Protobuf Include="Protos\Calls\AlterEntityInstance.proto" />
+    <Protobuf Include="Protos\Calls\ApplyPhysicsToEntityInstance.proto" />
+    <Protobuf Include="Protos\Calls\DestroyEntityInstance.proto" />
+    <Protobuf Include="Protos\Calls\GenerateStateChange.proto" />
+    <Protobuf Include="Protos\Calls\RegistryEntityHandlers.proto" />
+    <Protobuf Include="Protos\Calls\SpawnNewEntityInstance.proto" />
+    <Protobuf Include="Protos\Calls\SubscribeToChannel.proto" />
     <Protobuf Include="Protos\EntityABI.proto" GrpcServices="Client" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Protos\Calls\" />
-    <Folder Include="Protos\Callbacks\" />
-    <Folder Include="Protos\Messages\" />
+    <Protobuf Include="Protos\Messages\ChainIdentity.proto" />
+    <Protobuf Include="Protos\Messages\ChannelDesignation.proto" />
+    <Protobuf Include="Protos\Messages\Common.proto" />
+    <Protobuf Include="Protos\Messages\EntityIdentity.proto" />
+    <Protobuf Include="Protos\Messages\EntityInstanceTag.proto" />
+    <Protobuf Include="Protos\Messages\MessageId.proto" />
+    <Protobuf Include="Protos\Messages\MomentumUpdate.proto" />
   </ItemGroup>
 
   <Import Project="build\WapcGuest.targets" />

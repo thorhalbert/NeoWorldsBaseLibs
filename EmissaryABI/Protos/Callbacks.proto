@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "EmissaryABIProtos.Callbacks";
+
+package EmissaryABI;
+
+message ABI_Callbacks_Calls {}
+message ABI_Callbacks_Returns {}

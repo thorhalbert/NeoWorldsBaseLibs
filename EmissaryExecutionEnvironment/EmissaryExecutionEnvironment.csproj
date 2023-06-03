@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GodotSharp" Version="4.1.0-dev.2" />
-    <PackageReference Include="Google.Protobuf" Version="3.23.0" />
-    <PackageReference Include="Wasmtime" Version="8.0.1" />
+    <PackageReference Include="GodotSharp" Version="4.1.0-dev.4" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.2" />
+    <PackageReference Include="Wasmtime" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>

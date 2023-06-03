@@ -1,5 +1,8 @@
 syntax = "proto3";
 
-option csharp_namespace = "EmissaryABIProtos";
+option csharp_namespace = "EmissaryABIProtos.Calls.DestroyEntityInstance";
 
 package EmissaryABI;
+
+message DestroyEntityInstanceCall {}
+message DestroyEntityInstanceReturn {}

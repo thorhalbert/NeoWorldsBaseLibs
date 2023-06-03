@@ -1,5 +1,8 @@
 syntax = "proto3";
 
-option csharp_namespace = "EmissaryABIProtos";
+option csharp_namespace = "EmissaryABIProtos.Callbacks.EntityInstanceVersionUpdate";
 
 package EmissaryABI;
+
+message EntityInstanceVersionUpdateCall {}
+message EntityInstanceVersionUpdateReturn {}

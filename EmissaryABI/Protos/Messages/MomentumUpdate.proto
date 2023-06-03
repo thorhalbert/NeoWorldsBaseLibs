@@ -1,5 +1,7 @@
 syntax = "proto3";
 
-option csharp_namespace = "EmissaryABIProtos";
+option csharp_namespace = "EmissaryABIProtos.Messages.MomentumUpdate";
 
 package EmissaryABI;
+
+message MomentumUpdate {}

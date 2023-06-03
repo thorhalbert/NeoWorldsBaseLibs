@@ -1,5 +1,7 @@
 syntax = "proto3";
 
-option csharp_namespace = "EmissaryABIProtos";
+option csharp_namespace = "EmissaryABIProtos.Messages.MessageId";
 
 package EmissaryABI;
+
+message MessageId {}
