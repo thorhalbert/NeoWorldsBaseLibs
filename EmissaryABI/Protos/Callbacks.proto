@@ -4,5 +4,21 @@ option csharp_namespace = "EmissaryABIProtos.Callbacks";
 
 package EmissaryABI;
 
-message ABI_Callbacks_Calls {}
-message ABI_Callbacks_Returns {}
+import "Protos/Callbacks/DestroyEmissary.proto";
+import "Protos/Callbacks/DestroyEntityHandler.proto";
+
+message ABI_Callbacks_Calls {
+	int32 DispatchOffset=1;
+	oneof Calls {
+		DestroyEmissaryCall DestroyEmissaryCall = 101;
+		DestroyEntityHandlerCall DestroyEntityHandlerCall = 102;
+	}
+}
+
+message ABI_Callbacks_Returns {
+	int32 DispatchOffset=1;
+	oneof Returns {
+		DestroyEmissaryReturn DestroyEmissaryReturn = 101;
+		DestroyEntityHandlerReturn DestroyEntityHandlerReturn = 102;
+	}
+}

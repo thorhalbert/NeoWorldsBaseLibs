@@ -40,9 +40,9 @@
     <None Remove="Protos\Calls.proto" />
     <None Remove="Protos\Calls\AlterEntityInstance.proto" />
     <None Remove="Protos\Calls\ApplyPhysicsToEntityInstance.proto" />
-    <None Remove="Protos\Calls\DestroyEntityInstance.proto" />
     <None Remove="Protos\Calls\GenerateStateChange.proto" />
-    <None Remove="Protos\Calls\RegistryEntityHandlers.proto" />
+    <None Remove="Protos\Calls\RegistrerEntityHandlers.proto" />
+    <None Remove="Protos\Calls\RequestDestroyEntityInstance.proto" />
     <None Remove="Protos\Calls\SpawnNewEntityInstance.proto" />
     <None Remove="Protos\Calls\SubscribeToChannel.proto" />
     <None Remove="Protos\EntityABI.proto" />
@@ -73,9 +73,9 @@
     <Protobuf Include="Protos\Calls.proto" />
     <Protobuf Include="Protos\Calls\AlterEntityInstance.proto" />
     <Protobuf Include="Protos\Calls\ApplyPhysicsToEntityInstance.proto" />
-    <Protobuf Include="Protos\Calls\DestroyEntityInstance.proto" />
+    <Protobuf Include="Protos\Calls\RequestDestroyEntityInstance.proto" />
     <Protobuf Include="Protos\Calls\GenerateStateChange.proto" />
-    <Protobuf Include="Protos\Calls\RegistryEntityHandlers.proto" />
+    <Protobuf Include="Protos\Calls\RegistrerEntityHandlers.proto" />
     <Protobuf Include="Protos\Calls\SpawnNewEntityInstance.proto" />
     <Protobuf Include="Protos\Calls\SubscribeToChannel.proto" />
     <Protobuf Include="Protos\EntityABI.proto" GrpcServices="Client" />

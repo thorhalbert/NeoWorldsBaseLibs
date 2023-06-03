@@ -4,5 +4,7 @@ option csharp_namespace = "EmissaryABIProtos.Calls";
 
 package EmissaryABI;
 
-message ABI_Call_Calls {}
-message ABI_Call_Returns {}
+message ABI_Call_Calls {
+	int32 DispatchOffset=1;
+}
+message ABI_Call_Returns {int32 DispatchOffset=1;}
