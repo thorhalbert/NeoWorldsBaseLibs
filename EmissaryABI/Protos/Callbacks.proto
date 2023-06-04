@@ -6,12 +6,24 @@ package EmissaryABI;
 
 import "Protos/Callbacks/DestroyEmissary.proto";
 import "Protos/Callbacks/DestroyEntityHandler.proto";
+import "Protos/Callbacks/DestroyEntityInstance.proto";
+import "Protos/Callbacks/EntityInstanceUpdate.proto";
+import "Protos/Callbacks/EntityInstanceVersionUpdate.proto";
+import "Protos/Callbacks/InstantiateEntityInstance.proto";
+import "Protos/Callbacks/ReceiveInstanceStateChange.proto";
+import "Protos/Callbacks/ReceiveMessageFromChannel.proto";
 
 message ABI_Callbacks_Calls {
 	int32 DispatchOffset=1;
 	oneof Calls {
 		DestroyEmissaryCall DestroyEmissaryCall = 101;
 		DestroyEntityHandlerCall DestroyEntityHandlerCall = 102;
+		DestroyEntityInstanceCall DestroyEntityInstanceCall = 103;
+		EntityInstanceUpdateCall EntityInstanceUpdateCall = 104;
+		EntityInstanceVersionUpdateCall EntityInstanceVersionUpdateCall = 105;
+		InstantiateEntityInstanceCall InstantiateEntityInstanceCall = 106;
+		ReceiveInstanceStateChangeCall ReceiveInstanceStateChangeCall = 107;
+		ReceiveMessageFromChannelCall ReceiveMessageFromChannelCall = 108;
 	}
 }
 
@@ -20,5 +32,11 @@ message ABI_Callbacks_Returns {
 	oneof Returns {
 		DestroyEmissaryReturn DestroyEmissaryReturn = 101;
 		DestroyEntityHandlerReturn DestroyEntityHandlerReturn = 102;
+		DestroyEntityInstanceReturn DestroyEntityInstanceReturn = 103;
+		EntityInstanceUpdateReturn EntityInstanceUpdateReturn = 104;
+		EntityInstanceVersionUpdateReturn EntityInstanceVersionUpdateReturn = 105;
+		InstantiateEntityInstanceReturn InstantiateEntityInstanceReturn = 106;
+		ReceiveInstanceStateChangeReturn ReceiveInstanceStateChangeReturn = 107;
+		ReceiveMessageFromChannelReturn ReceiveMessageFromChannelReturn = 108;
 	}
 }

@@ -4,5 +4,7 @@ option csharp_namespace = "EmissaryABIProtos.Calls.RegisterEntityHandlers";
 
 package EmissaryABI;
 
-message RegisterEntityHandlersCall {}
+message RegisterEntityHandlersCall {
+	int32 NewDispatchOffset = 1;
+}
 message RegisterEntityHandlersReturn {}

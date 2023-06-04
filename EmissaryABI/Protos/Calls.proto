@@ -4,7 +4,37 @@ option csharp_namespace = "EmissaryABIProtos.Calls";
 
 package EmissaryABI;
 
+import "Protos/Calls/AlterEntityInstance.proto";
+import "Protos/Calls/ApplyPhysicsToEntityInstance.proto";
+import "Protos/Calls/GenerateStateChange.proto";
+import "Protos/Calls/RegisterEntityHandlers.proto";
+import "Protos/Calls/RequestDestroyEntityInstance.proto";
+import "Protos/Calls/SpawnNewEntityInstance.proto";
+import "Protos/Calls/SubscribeToChannel.proto";
+
 message ABI_Call_Calls {
 	int32 DispatchOffset=1;
+	oneof Calls {
+		AlterEntityInstanceCall AlterEntityInstanceCall = 401;
+		ApplyPhysicsToEntityInstanceCall ApplyPhysicsToEntityInstanceCall = 402;
+		GenerateStateChangeCall GenerateStateChangeCall = 403;
+		RegisterEntityHandlersCall RegisterEntityHandlersCall = 404;
+		RequestDestroyEntityInstanceCall RequestDestroyEntityInstanceCall = 405;
+		SpawnNewEntityInstanceCall SpawnNewEntityInstanceCall = 406;
+		SubscribeToChannelCall SubscribeToChannelCall = 407;
+	}
 }
-message ABI_Call_Returns {int32 DispatchOffset=1;}
+
+message ABI_Call_Returns {
+	int32 DispatchOffset=1;
+		oneof Calls {
+		AlterEntityInstanceReturn AlterEntityInstanceReturn = 401;
+		ApplyPhysicsToEntityInstanceReturn ApplyPhysicsToEntityInstanceReturn = 402;
+		GenerateStateChangeReturn GenerateStateChangeReturn = 403;
+		RegisterEntityHandlersReturn RegisterEntityHandlersReturn = 404;
+		RequestDestroyEntityInstanceReturn RequestDestroyEntityInstanceReturn = 405;
+		SpawnNewEntityInstanceReturn SpawnNewEntityInstanceReturn = 406;
+		SubscribeToChannelReturn SubscribeToChannelReturn = 407;
+	}
+}
+
