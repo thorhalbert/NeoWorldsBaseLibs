@@ -1,4 +1,6 @@
 ﻿using EmissaryABIProtos;
+using EmissaryABIProtos.Calls;
+using EntityABI.Entities;
 using Google.Protobuf;
 using System;
 using System.Runtime.InteropServices;
@@ -10,11 +12,13 @@ public delegate byte[] WapcFunc(byte[] payload);
 
 public class Wapc
 {
-  public Wapc()
-  {
-    interop = new Interop();
-    Interop.SetInterop(interop);
-  }
+    public Wapc()
+    {
+        interop = new Interop();
+        Interop.SetInterop(interop);
+
+        EntityBase.InteropCallArenaDelegate = InteropCallArena;
+    }
 
   private Interop interop;
 
@@ -43,6 +47,29 @@ public class Wapc
         Console.WriteLine($"Entity Gets: {retVal.Name}");
 
 
+    }
+
+
+    public static unsafe ABI_Call_Returns InteropCallArena(ABI_Call_Calls call)
+    {
+        var b = call.ToByteArray();
+
+        var retVal = new ABI_Call_Returns();
+        Int32 retLen = 8192;
+
+        Byte[] returnArray = new byte[retLen];
+
+        fixed (byte* bp = b, ra = returnArray)
+        {
+            Interop.EntityToArenaCall(1, bp, b.Length, ra, &retLen);
+            Console.WriteLine($"Arena Call Returns - length={retLen}");
+            Console.WriteLine($"Return array: {Convert.ToHexString(returnArray, 0, retLen)}");
+            retVal.MergeFrom(returnArray, 0, retLen);
+        }
+
+        //Console.WriteLine($"Entity Gets: {retVal.Name}");
+
+        return retVal;
     }
 
     //public static unsafe byte[] HostCall(

@@ -43,6 +43,7 @@ namespace EntityABI.Entities
         protected int DispatchOffset { get; private set; }      // We assign this, not the derrived class
 
         protected EntityIdentity Identity { get; private set; }
+        public static Func<ABI_Call_Calls, ABI_Call_Returns>? InteropCallArenaDelegate { get; internal set; }
 
         protected EntityBase(EntityIdentity entityIdentity)
         {
@@ -77,9 +78,10 @@ namespace EntityABI.Entities
         {
             abiCall.DispatchOffset = DispatchOffset;
 
-            // Call happens here - dummy until we get this 
+            if (InteropCallArenaDelegate == null)
+                throw new ArgumentException("InteropCallArenaDelegate is not set");
 
-            return new ABI_Call_Returns();
+            return InteropCallArenaDelegate(abiCall);
         }
 
         protected AlterEntityInstanceReturn EntityABI_AlterEntityInstance(AlterEntityInstanceCall call)
